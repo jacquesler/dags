@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2019, 12, 2),
+    'start_date': datetime(2020, 7, 16),
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 1,
@@ -22,7 +22,7 @@ def sample_python_function(**kwargs):
 dag = DAG('example_python_operator',
             max_active_runs=3,
             catchup=True,
-            schedule_interval='@daily',
+            schedule_interval='*/10 * * * *',
             default_args=default_args)
 
 with dag:
