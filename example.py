@@ -22,7 +22,7 @@ def sample_python_function(**kwargs):
 dag = DAG('example_python_operator',
             max_active_runs=3,
             catchup=True,
-            schedule_interval='*/10 * * * *',
+            schedule_interval='@daily',
             default_args=default_args)
 
 with dag:
